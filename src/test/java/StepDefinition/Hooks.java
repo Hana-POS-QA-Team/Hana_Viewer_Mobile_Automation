@@ -13,39 +13,19 @@ import java.util.Properties;
 public class Hooks {
     public TestBaseClass testBaseClass = new TestBaseClass();
 
-//    @Before(order = 1)
-//    public void setup() {
-//        //   startAppiumServer();
-//        //   startEmulator();
-//        //   launchAndroidApp();
-//        testBaseClass.SuiteBeforeMethods();
-//    }
-    @Before(order = 0)
-    public void chrome_setup() {
+    @Before(order = 1)
+    public void setup() {
         //   startAppiumServer();
         //   startEmulator();
         //   launchAndroidApp();
-        testBaseClass.loadConfig();
-        testBaseClass.Suite_Chrome_Before_Method();
+        testBaseClass.SuiteBeforeMethods();
     }
 
-//    @After(order=0)
-//    public void teardown() {
-//
-//        testBaseClass.teardown();
-//    }
+    @After(order=0)
+    public void teardown() {
 
-    @After(order=1)
-    public void chrome_teardown(){
-        testBaseClass.tearDown_chrome();
+        testBaseClass.teardown();
     }
 
-//    @AfterStep()
-//    public void addScreenshot(Scenario scenario) {
-//        if (scenario.isFailed()) {
-//            TakesScreenshot ts = (TakesScreenshot) testBaseClass
-//            byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-//            scenario.attach(screenshot, "image/png", scenario.getName());
-//        }
-//    }
+
 }
